@@ -25,12 +25,21 @@ public class Post {
     private String content;
 
     @Column(nullable = false)
-    private LocalDateTime redDate;
+    private LocalDateTime regDate;
 
     @Column(nullable = false)
     private Long likeCount;
 
     @Column(nullable = false)
     private boolean public_status;
+
+    @Builder
+    public Post(String title, String content, LocalDateTime regDate, Long likeCount, boolean public_status) {
+        this.title = title;
+        this.content = content;
+        this.regDate = regDate;
+        this.likeCount = likeCount;
+        this.public_status = public_status;
+    }
 
 }
