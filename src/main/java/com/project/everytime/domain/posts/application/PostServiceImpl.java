@@ -9,7 +9,6 @@ import com.project.everytime.domain.posts.payload.response.PostResponseDto;
 import com.project.everytime.global.common.BaseResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Sort;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -27,20 +26,20 @@ public class PostServiceImpl implements PostService {
     public BaseResponse findAll() {
         List<Post> posts = postRepository.findAll(Sort.by(Sort.Direction.DESC, "id"));
         List<PostResponseDto> dtos = postMapper.convertPostsToDtos(posts);
-        return new BaseResponse(HttpStatus.OK, "모든 게시글 불러오기 성공", dtos);
+        return BaseResponse.ok("모든 게시글 불러오기 성공", dtos);
     }
 
     @Override
     @Transactional
     public BaseResponse createPost(PostDto postDto) {
         postRepository.save(postMapper.dtoToEntity(postDto));
-        return new BaseResponse(HttpStatus.OK, "게시글 생성 성공");
+        return BaseResponse.created("게시글 생성 성공");
     }
 
     @Override
     @Transactional(readOnly = true)
     public BaseResponse readPost(Long id) {
         Post post = postRepository.findById(id).orElseThrow(PostException::notFoundPost);
-        return new BaseResponse(HttpStatus.OK, "게시글 단일 조회 성공", postMapper.entityToDto(post));
+        return BaseResponse.ok("게시글 단일 조회 성공", postMapper.entityToDto(post));
     }
 }
