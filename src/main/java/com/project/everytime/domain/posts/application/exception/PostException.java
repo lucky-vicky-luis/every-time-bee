@@ -1,4 +1,4 @@
-package com.project.everytime.global.exception.post;
+package com.project.everytime.domain.posts.application.exception;
 
 import com.project.everytime.global.exception.BusinessException;
 

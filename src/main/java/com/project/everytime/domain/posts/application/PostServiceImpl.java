@@ -2,7 +2,7 @@ package com.project.everytime.domain.posts.application;
 
 import com.project.everytime.domain.posts.domain.Post;
 import com.project.everytime.domain.posts.domain.repository.PostRepository;
-import com.project.everytime.global.exception.post.PostException;
+import com.project.everytime.domain.posts.application.exception.PostException;
 import com.project.everytime.domain.posts.mapper.PostMapper;
 import com.project.everytime.domain.posts.payload.request.PostDto;
 import com.project.everytime.domain.posts.payload.response.PostResponseDto;
