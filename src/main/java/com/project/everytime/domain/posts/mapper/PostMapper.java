@@ -33,7 +33,7 @@ public class PostMapper {
                 .build();
     }
 
-    public List<PostResponseDto> convertDevicesToDtos(List<Post> posts) {
+    public List<PostResponseDto> convertPostsToDtos(List<Post> posts) {
         return posts.stream()
                 .map(this::entityToDto)
                 .collect(Collectors.toList());
