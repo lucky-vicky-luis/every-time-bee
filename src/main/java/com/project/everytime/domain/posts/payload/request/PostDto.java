@@ -6,7 +6,7 @@ public record PostDto(
         Long id,
         String title,
         String content,
-        LocalDateTime redDate,
+        LocalDateTime regDate,
         Long likeCount,
         boolean public_status
 ) {
