@@ -31,7 +31,7 @@ public class PostController {
     }
 
     @DeleteMapping("/delete/{id}")
-    public BaseResponse deletePost(@PathVariable PostDeleteRequest postDeleteRequest, Authentication authentication){
+    public BaseResponse deletePost(@RequestBody PostDeleteRequest postDeleteRequest, Authentication authentication){
         return postService.deletePost(postDeleteRequest, authentication);
     }
 
