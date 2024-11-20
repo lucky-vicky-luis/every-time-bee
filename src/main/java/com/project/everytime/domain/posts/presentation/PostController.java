@@ -2,6 +2,7 @@ package com.project.everytime.domain.posts.presentation;
 
 import com.project.everytime.domain.posts.application.PostService;
 import com.project.everytime.domain.posts.payload.request.PostDto;
+import com.project.everytime.domain.posts.payload.request.PostSearchRequest;
 import com.project.everytime.global.common.BaseResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -27,6 +28,13 @@ public class PostController {
     @GetMapping("/detail/{id}")
     public BaseResponse readPost(@PathVariable("id") Long id){
         return postService.readPost(id);
+    }
+
+    @GetMapping("/search")
+    public BaseResponse searchPost(@RequestBody PostSearchRequest request){
+        return BaseResponse.ok(
+                "조회성공",
+                postService.postSearch(request));
     }
 
 }

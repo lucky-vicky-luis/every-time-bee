@@ -1,10 +1,12 @@
 package com.project.everytime.domain.posts.application;
 
 import com.project.everytime.domain.posts.domain.Post;
+import com.project.everytime.domain.posts.domain.repository.PostQueryRepository;
 import com.project.everytime.domain.posts.domain.repository.PostRepository;
 import com.project.everytime.domain.posts.application.exception.PostException;
 import com.project.everytime.domain.posts.mapper.PostMapper;
 import com.project.everytime.domain.posts.payload.request.PostDto;
+import com.project.everytime.domain.posts.payload.request.PostSearchRequest;
 import com.project.everytime.domain.posts.payload.response.PostResponseDto;
 import com.project.everytime.global.common.BaseResponse;
 import lombok.RequiredArgsConstructor;
@@ -19,6 +21,7 @@ import java.util.List;
 public class PostServiceImpl implements PostService {
 
     private final PostRepository postRepository;
+    private final PostQueryRepository postQueryRepository;
     private final PostMapper postMapper;
 
     @Override
@@ -42,4 +45,10 @@ public class PostServiceImpl implements PostService {
         Post post = postRepository.findById(id).orElseThrow(PostException::notFoundPost);
         return BaseResponse.ok("게시글 단일 조회 성공", postMapper.entityToDto(post));
     }
+
+    @Override
+    public List<PostDto> postSearch(PostSearchRequest request) {
+        return postQueryRepository.roomSearch(request);
+    }
+
 }
