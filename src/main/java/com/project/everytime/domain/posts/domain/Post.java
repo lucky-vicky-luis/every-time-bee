@@ -11,6 +11,8 @@ import java.time.LocalDateTime;
 @Getter
 @ToString
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
+@AllArgsConstructor
+@Builder
 @EntityListeners(AuditingEntityListener.class)
 public class Post {
 
@@ -32,14 +34,5 @@ public class Post {
 
     @Column(nullable = false)
     private boolean public_status;
-
-    @Builder
-    public Post(String title, String content, LocalDateTime regDate, Long likeCount, boolean public_status) {
-        this.title = title;
-        this.content = content;
-        this.regDate = regDate;
-        this.likeCount = likeCount;
-        this.public_status = public_status;
-    }
 
 }
