@@ -52,14 +52,14 @@ public class PostServiceImpl implements PostService {
 
     @Override
     @Transactional
-    public BaseResponse deletePost(Long id, Authentication authentication) {
-        UserEntity user = findUserById(authentication.getName());
-        deletePostById(id);
+    public BaseResponse deletePost(Long postId, Long writerId, Authentication authentication) {
+        UserEntity user = findUserById(writerId);
+        deletePostById(postId);
         return new BaseResponse(HttpStatus.OK, "게시글 삭제 성공");
     }
 
-    private UserEntity findUserById(String email) {
-        return userRepository.findByEmail(email)
+    private UserEntity findUserById(Long writerId) {
+        return userRepository.findById(writerId)
                 .orElseThrow(UserException::notFoundUser);
     }
 

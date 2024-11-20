@@ -12,6 +12,6 @@ public interface PostService {
 
     BaseResponse readPost(Long id);
 
-    BaseResponse deletePost(Long id, Authentication authentication);
+    BaseResponse deletePost(Long postId, Long writerId, Authentication authentication);
 
 }
