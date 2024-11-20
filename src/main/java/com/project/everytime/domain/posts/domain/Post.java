@@ -35,4 +35,7 @@ public class Post {
     @Column(nullable = false)
     private boolean public_status;
 
+    @Column(nullable = false)
+    private Long writerId;
+
 }
