@@ -1,6 +1,7 @@
 package com.project.everytime.domain.posts.presentation;
 
 import com.project.everytime.domain.posts.application.PostService;
+import com.project.everytime.domain.posts.payload.request.PostDeleteRequest;
 import com.project.everytime.domain.posts.payload.request.PostDto;
 import com.project.everytime.global.common.BaseResponse;
 import lombok.RequiredArgsConstructor;
@@ -30,8 +31,8 @@ public class PostController {
     }
 
     @DeleteMapping("/delete/{id}")
-    public BaseResponse deletePost(@PathVariable Long postId, Long writerId, Authentication authentication){
-        return postService.deletePost(postId, writerId, authentication);
+    public BaseResponse deletePost(@PathVariable PostDeleteRequest postDeleteRequest, Authentication authentication){
+        return postService.deletePost(postDeleteRequest, authentication);
     }
 
 }

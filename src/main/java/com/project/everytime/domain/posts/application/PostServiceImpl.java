@@ -5,6 +5,7 @@ import com.project.everytime.domain.posts.domain.Post;
 import com.project.everytime.domain.posts.domain.repository.PostRepository;
 import com.project.everytime.domain.posts.application.exception.PostException;
 import com.project.everytime.domain.posts.mapper.PostMapper;
+import com.project.everytime.domain.posts.payload.request.PostDeleteRequest;
 import com.project.everytime.domain.posts.payload.request.PostDto;
 import com.project.everytime.domain.posts.payload.response.PostResponseDto;
 import com.project.everytime.domain.user.domain.entity.UserEntity;
@@ -52,9 +53,9 @@ public class PostServiceImpl implements PostService {
 
     @Override
     @Transactional
-    public BaseResponse deletePost(Long postId, Long writerId, Authentication authentication) {
-        UserEntity user = findUserById(writerId);
-        deletePostById(postId);
+    public BaseResponse deletePost(PostDeleteRequest postDeleteRequest, Authentication authentication) {
+        UserEntity user = findUserById(postDeleteRequest.writerId());
+        deletePostById(postDeleteRequest.postId());
         return new BaseResponse(HttpStatus.OK, "게시글 삭제 성공");
     }
 
