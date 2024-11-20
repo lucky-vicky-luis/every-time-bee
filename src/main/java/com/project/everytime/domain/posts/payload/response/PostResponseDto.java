@@ -11,6 +11,7 @@ public record PostResponseDto(
         String content,
         LocalDateTime regDate,
         Long likeCount,
-        boolean public_status
+        boolean public_status,
+        Long writerId
 ) {
 }
