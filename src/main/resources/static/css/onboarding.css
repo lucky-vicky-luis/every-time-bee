@@ -1,0 +1,91 @@
+#title {
+    color: red;
+}
+
+.root {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    height: 100%;
+    width: 720px;
+    padding: 64px;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.title {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.sub-title {
+    font-size: 22px;
+}
+
+.logo {
+    position: absolute;
+    right: 0;
+    margin-bottom: 330px;
+}
+
+.sign-in-button {
+    width: 100%;
+    margin-top: 180px;
+    display: flex;
+    border: 1px solid #C4C4C4;
+    border-radius: 16px;
+    color: #C4C4C4;
+    outline: none;
+    background: transparent;
+    justify-content: center;
+    padding: 16px;
+    cursor: pointer;
+
+    &:hover {
+        background: color-mix(in srgb, white 90%, black 10%);
+    }
+
+    &:active {
+        scale: 0.98;
+    }
+
+    transition: 0.1s background ease-in-out, 0.2s scale;
+}
+
+.sign-up-button {
+    width: 100%;
+    display: flex;
+    border: none;
+    border-radius: 16px;
+    color: white;
+    background: #EE3C35;
+    outline: none;
+    justify-content: center;
+    padding: 16px;
+    cursor: pointer;
+    margin-top: 12px;
+
+    &:hover {
+        background: color-mix(in srgb, #EE3C35 90%, black 10%);
+    }
+
+    &:active {
+        scale: 0.98;
+    }
+
+    transition: 0.1s background ease-in-out, 0.2s scale;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
