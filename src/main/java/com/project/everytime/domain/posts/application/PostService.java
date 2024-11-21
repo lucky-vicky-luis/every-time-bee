@@ -12,6 +12,8 @@ public interface PostService {
 
     BaseResponse findAll();
 
+    BaseResponse myPosts(Long userId, Authentication authentication);
+
     BaseResponse createPost(PostDto postDto);
 
     BaseResponse readPost(Long id);
