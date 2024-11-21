@@ -42,5 +42,9 @@ public class PostController {
 
     }
 
+    @PatchMapping
+    public BaseResponse addLike(@RequestParam Long postId){
+        return postService.addLike(postId);
+    }
 
 }

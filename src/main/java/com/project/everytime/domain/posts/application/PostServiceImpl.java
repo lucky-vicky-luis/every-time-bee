@@ -59,6 +59,14 @@ public class PostServiceImpl implements PostService {
         return BaseResponse.ok("조회 성공",postQueryRepository.postSearch(request));
     }
 
+    @Override
+    public BaseResponse addLike(Long postId) {
+        Post post = postRepository.findById(postId).orElseThrow(PostException::notFoundPost);
+        post.setLikeCount(post.getLikeCount() + 1);
+        postRepository.save(post);
+        return BaseResponse.ok("성공");
+    }
+
     @Transactional
     public BaseResponse deletePost(PostDeleteRequest postDeleteRequest, Authentication authentication) {
         UserEntity user = findUserById(postDeleteRequest.writerId());

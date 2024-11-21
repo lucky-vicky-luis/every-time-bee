@@ -18,6 +18,8 @@ public interface PostService {
 
     BaseResponse postSearch(PostSearchRequest request);
 
+    BaseResponse addLike(Long postId);
+
     BaseResponse deletePost(PostDeleteRequest postDeleteRequest, Authentication authentication);
 
 }
