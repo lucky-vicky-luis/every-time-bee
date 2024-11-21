@@ -41,6 +41,14 @@ public class PostServiceImpl implements PostService {
     }
 
     @Override
+    public BaseResponse myPosts(Long userId, Authentication authentication) {
+        UserEntity user = findUserByUserId(userId);
+        List<Post> posts = postRepository.findAll(Sort.by(Sort.Direction.DESC, "id"));
+        List<PostResponseDto> dtos = postMapper.convertPostsToDtos(posts);
+        return BaseResponse.ok("해당 유저의 게시글 불러오기 성공", dtos);
+    }
+
+    @Override
     @Transactional
     public BaseResponse createPost(PostDto postDto) {
         postRepository.save(postMapper.dtoToEntity(postDto));
@@ -72,6 +80,12 @@ public class PostServiceImpl implements PostService {
         UserEntity user = findUserById(postDeleteRequest.writerId());
         deletePostById(postDeleteRequest.postId());
         return new BaseResponse(HttpStatus.OK, "게시글 삭제 성공");
+    }
+
+    @Transactional(readOnly = true)
+    public UserEntity findUserByUserId(Long id) {
+        return userRepository.findById(id)
+                .orElseThrow(UserException::notFoundUser);
     }
 
     private UserEntity findUserById(Long writerId) {

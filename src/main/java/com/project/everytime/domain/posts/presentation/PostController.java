@@ -42,6 +42,10 @@ public class PostController {
 
     }
 
+    @GetMapping("/my/{userId}")
+    public BaseResponse myPosts(@PathVariable("userId") Long userId, Authentication authentication){
+        return postService.myPosts(userId, authentication);
+
     @PatchMapping
     public BaseResponse addLike(@RequestParam Long postId){
         return postService.addLike(postId);

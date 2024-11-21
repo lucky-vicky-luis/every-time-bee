@@ -2,7 +2,6 @@ package com.project.everytime.domain.posts.domain.repository;
 
 import static com.project.everytime.domain.posts.domain.QPost.post;
 
-import com.project.everytime.domain.posts.domain.Post;
 import com.project.everytime.domain.posts.payload.request.PostDto;
 import com.project.everytime.domain.posts.payload.request.PostSearchRequest;
 import com.querydsl.core.types.ConstructorExpression;
