@@ -34,11 +34,13 @@ public class PostController {
     @GetMapping("/search")
     public BaseResponse searchPost(@RequestBody PostSearchRequest request){
         return postService.postSearch(request);
-      
+    }
+
     @DeleteMapping("/delete/{id}")
     public BaseResponse deletePost(@RequestBody PostDeleteRequest postDeleteRequest, Authentication authentication){
         return postService.deletePost(postDeleteRequest, authentication);
 
     }
+
 
 }
