@@ -55,8 +55,8 @@ public class PostServiceImpl implements PostService {
     }
 
     @Override
-    public List<PostDto> postSearch(PostSearchRequest request) {
-        return postQueryRepository.roomSearch(request);
+    public BaseResponse postSearch(PostSearchRequest request) {
+        return BaseResponse.ok("조회 성공",postQueryRepository.postSearch(request));
     }
 
     @Transactional

@@ -16,7 +16,7 @@ public interface PostService {
 
     BaseResponse readPost(Long id);
 
-    List<PostDto> postSearch(PostSearchRequest request);
+    BaseResponse postSearch(PostSearchRequest request);
 
     BaseResponse deletePost(PostDeleteRequest postDeleteRequest, Authentication authentication);
 

@@ -18,7 +18,7 @@ public class PostQueryRepository {
 
     private final JPAQueryFactory jpaQueryFactory;
 
-    public List<PostDto> roomSearch(PostSearchRequest request){
+    public List<PostDto> postSearch(PostSearchRequest request){
         return jpaQueryFactory
                 .select(roomConstructorExpression())
                 .from(post)

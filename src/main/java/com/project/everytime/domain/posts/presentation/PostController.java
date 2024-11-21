@@ -33,9 +33,7 @@ public class PostController {
 
     @GetMapping("/search")
     public BaseResponse searchPost(@RequestBody PostSearchRequest request){
-        return BaseResponse.ok(
-                "조회성공",
-                postService.postSearch(request));
+        return postService.postSearch(request);
       
     @DeleteMapping("/delete/{id}")
     public BaseResponse deletePost(@RequestBody PostDeleteRequest postDeleteRequest, Authentication authentication){
