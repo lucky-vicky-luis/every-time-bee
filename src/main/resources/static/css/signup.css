@@ -1,0 +1,207 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.back {
+    background-color: #111111;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+}
+
+.container {
+    width: 583px;
+    height: 771px;
+    border-radius: 20px;
+    border: 1.50px #313131 solid;
+    position: absolute;
+    margin-left: 443.5px;
+    margin-top: 30px;
+}
+
+.title1 {
+    color: white;
+    font-size: 30px;
+    font-family: Pretendard;
+    font-weight: 700;
+    margin-left: 485px;
+    margin-top: 70px;
+    position: absolute;
+}
+
+.sub-title1 {
+    color: #9A9A9A;
+    font-size: 20px;
+    font-family: Pretendard;
+    font-weight: 500;
+    position: absolute;
+    margin-left: 485px;
+    margin-top: 120px;
+}
+
+.sub-title2 {
+    color: white;
+    font-size: 20px;
+    font-family: Pretendard;
+    font-weight: 600;
+    position: absolute;
+    margin-left: 655px;
+    margin-top: 119.5px;
+}
+
+.sub-title3 {
+    color: #9A9A9A;
+    font-size: 20px;
+    font-family: Pretendard;
+    font-weight: 500;
+    position: absolute;
+    margin-left: 880px;
+    margin-top: 120px;
+}
+
+.email {
+    color: #9A9A9A;
+    font-size: 19px;
+    font-family: Pretendard;
+    font-weight: 700;
+
+    position: absolute;
+    margin-left: 505px;
+    margin-top: 210px;
+}
+
+.emailInput {
+    width: 483px;
+    height: 58px;
+    background: #1F1F1F;
+    border-radius: 10px;
+    border: 1px #313131 solid;
+
+    color: #858585;
+    font-size: 16px;
+    font-family: Pretendard;
+    font-weight: 500;
+    padding-left: 20px;
+
+    position: absolute;
+    margin-left: 485px;
+    margin-top: 240px;
+}
+
+.password {
+    color: #9A9A9A;
+    font-size: 19px;
+    font-family: Pretendard;
+    font-weight: 700;
+
+    position: absolute;
+    margin-left: 505px;
+    margin-top: 320px;
+}
+
+.passInput {
+    width: 483px;
+    height: 58px;
+    background: #1F1F1F;
+    border-radius: 10px;
+    border: 1px #313131 solid;
+
+    color: #858585;
+    font-size: 16px;
+    font-family: Pretendard;
+    font-weight: 500;
+    padding-left: 20px;
+
+    position: absolute;
+    margin-left: 485px;
+    margin-top: 350px;
+}
+
+.school {
+    color: #9A9A9A;
+    font-size: 19px;
+    font-family: Pretendard;
+    font-weight: 700;
+
+    position: absolute;
+    margin-left: 505px;
+    margin-top: 430px;
+}
+
+.schInput {
+    width: 483px;
+    height: 58px;
+    background: #1F1F1F;
+    border-radius: 10px;
+    border: 1px #313131 solid;
+
+    color: #858585;
+    font-size: 16px;
+    font-family: Pretendard;
+    font-weight: 500;
+    padding-left: 20px;
+
+    position: absolute;
+    margin-left: 485px;
+    margin-top: 460px;
+}
+
+.nickname {
+    color: #9A9A9A;
+    font-size: 19px;
+    font-family: Pretendard;
+    font-weight: 700;
+
+    position: absolute;
+    margin-left: 505px;
+    margin-top: 550px;
+}
+
+.nameInput {
+    width: 483px;
+    height: 58px;
+    background: #1F1F1F;
+    border-radius: 10px;
+    border: 1px #313131 solid;
+
+    color: #858585;
+    font-size: 16px;
+    font-family: Pretendard;
+    font-weight: 500;
+    padding-left: 20px;
+
+    position: absolute;
+    margin-left: 485px;
+    margin-top: 580px;
+}
+
+
+.loginButton {
+    width: 503px;
+    height: 71px;
+    background: #EE3C35;
+    border-radius: 10px;
+    border: none;
+
+    text-align: center;
+    color: white;
+    font-size: 22px;
+    font-family: Pretendard;
+    font-weight: 800;
+
+    position: absolute;
+    cursor: pointer;
+    margin-left: 485px;
+    margin-top: 700px;
+
+    &:hover {
+        background: color-mix(in srgb, #EE3C35 90%, black 10%);
+    }
+
+    &:active {
+        scale: 0.98;
+    }
+
+    transition: 0.1s background ease-in-out, 0.2s scale;
+}

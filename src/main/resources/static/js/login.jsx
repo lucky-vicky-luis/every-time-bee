@@ -13,7 +13,6 @@ const Login = () => {
             <div className={'email'}>이메일</div>
             <input className={'emailInput'} placeholder={'이메일을 입력해주세요.'}/>
             <div className={'password'}>비밀번호</div>
-            {/* 여기서 input type을 password로 변경 */}
             <input className={'passInput'} type="password" placeholder={'비밀번호를 입력해주세요.'}/>
             <div className={'toSignup'}>회원가입하기</div>
 
