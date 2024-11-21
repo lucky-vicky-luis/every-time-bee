@@ -2,11 +2,13 @@ package com.project.everytime.domain.posts.application;
 
 import com.project.everytime.domain.posts.application.exception.PostError;
 import com.project.everytime.domain.posts.domain.Post;
+import com.project.everytime.domain.posts.domain.repository.PostQueryRepository;
 import com.project.everytime.domain.posts.domain.repository.PostRepository;
 import com.project.everytime.domain.posts.application.exception.PostException;
 import com.project.everytime.domain.posts.mapper.PostMapper;
 import com.project.everytime.domain.posts.payload.request.PostDeleteRequest;
 import com.project.everytime.domain.posts.payload.request.PostDto;
+import com.project.everytime.domain.posts.payload.request.PostSearchRequest;
 import com.project.everytime.domain.posts.payload.response.PostResponseDto;
 import com.project.everytime.domain.user.domain.entity.UserEntity;
 import com.project.everytime.domain.user.domain.repository.UserRepository;
@@ -26,6 +28,7 @@ import java.util.List;
 public class PostServiceImpl implements PostService {
 
     private final PostRepository postRepository;
+    private final PostQueryRepository postQueryRepository;
     private final UserRepository userRepository;
     private final PostMapper postMapper;
 
@@ -52,6 +55,10 @@ public class PostServiceImpl implements PostService {
     }
 
     @Override
+    public BaseResponse postSearch(PostSearchRequest request) {
+        return BaseResponse.ok("조회 성공",postQueryRepository.postSearch(request));
+    }
+
     @Transactional
     public BaseResponse deletePost(PostDeleteRequest postDeleteRequest, Authentication authentication) {
         UserEntity user = findUserById(postDeleteRequest.writerId());
@@ -70,4 +77,5 @@ public class PostServiceImpl implements PostService {
         }
         postRepository.deleteById(id);
     }
+
 }
