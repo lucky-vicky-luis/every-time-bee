@@ -1,16 +1,23 @@
 package com.project.everytime.domain.posts.application;
 
+import com.project.everytime.domain.posts.application.exception.PostError;
 import com.project.everytime.domain.posts.domain.Post;
 import com.project.everytime.domain.posts.domain.repository.PostQueryRepository;
 import com.project.everytime.domain.posts.domain.repository.PostRepository;
 import com.project.everytime.domain.posts.application.exception.PostException;
 import com.project.everytime.domain.posts.mapper.PostMapper;
+import com.project.everytime.domain.posts.payload.request.PostDeleteRequest;
 import com.project.everytime.domain.posts.payload.request.PostDto;
 import com.project.everytime.domain.posts.payload.request.PostSearchRequest;
 import com.project.everytime.domain.posts.payload.response.PostResponseDto;
+import com.project.everytime.domain.user.domain.entity.UserEntity;
+import com.project.everytime.domain.user.domain.repository.UserRepository;
+import com.project.everytime.domain.user.exception.UserException;
 import com.project.everytime.global.common.BaseResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Sort;
+import org.springframework.http.HttpStatus;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -22,6 +29,7 @@ public class PostServiceImpl implements PostService {
 
     private final PostRepository postRepository;
     private final PostQueryRepository postQueryRepository;
+    private final UserRepository userRepository;
     private final PostMapper postMapper;
 
     @Override
@@ -49,6 +57,25 @@ public class PostServiceImpl implements PostService {
     @Override
     public List<PostDto> postSearch(PostSearchRequest request) {
         return postQueryRepository.roomSearch(request);
+    }
+
+    @Transactional
+    public BaseResponse deletePost(PostDeleteRequest postDeleteRequest, Authentication authentication) {
+        UserEntity user = findUserById(postDeleteRequest.writerId());
+        deletePostById(postDeleteRequest.postId());
+        return new BaseResponse(HttpStatus.OK, "게시글 삭제 성공");
+    }
+
+    private UserEntity findUserById(Long writerId) {
+        return userRepository.findById(writerId)
+                .orElseThrow(UserException::notFoundUser);
+    }
+
+    private void deletePostById(Long id) {
+        if (!postRepository.existsById(id)) {
+            throw new PostException(PostError.POST_NOT_FOUND_EXCEPTION);
+        }
+        postRepository.deleteById(id);
     }
 
 }

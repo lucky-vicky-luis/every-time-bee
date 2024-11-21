@@ -1,13 +1,14 @@
 package com.project.everytime.domain.posts.presentation;
 
 import com.project.everytime.domain.posts.application.PostService;
+import com.project.everytime.domain.posts.payload.request.PostDeleteRequest;
 import com.project.everytime.domain.posts.payload.request.PostDto;
 import com.project.everytime.domain.posts.payload.request.PostSearchRequest;
 import com.project.everytime.global.common.BaseResponse;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
-@CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @RequestMapping("/post")
 @RequiredArgsConstructor
@@ -35,6 +36,11 @@ public class PostController {
         return BaseResponse.ok(
                 "조회성공",
                 postService.postSearch(request));
+      
+    @DeleteMapping("/delete/{id}")
+    public BaseResponse deletePost(@RequestBody PostDeleteRequest postDeleteRequest, Authentication authentication){
+        return postService.deletePost(postDeleteRequest, authentication);
+
     }
 
 }
