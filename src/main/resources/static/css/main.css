@@ -1,0 +1,190 @@
+#title {
+    color: red;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.root {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    height: 110%;
+    width: 720px;
+    padding: 64px;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.logo {
+    height: 107px;
+    width: 107px;
+
+    position: absolute;
+    margin-top: -860px;
+    margin-left: -20px;
+
+    cursor: pointer;
+}
+
+
+.profile {
+    width: 52px;
+    height: 53.46px;
+
+    position: absolute;
+    margin-top: -860px;
+    margin-left: 580px;
+
+    cursor: pointer;
+}
+
+.search {
+    width: 39px;
+    height: 39px;
+
+    position: absolute;
+    margin-top: -860px;
+    margin-left: 670px;
+
+    cursor: pointer;
+
+}
+
+.school {
+    color: #292929;
+    font-size: 30px;
+    font-family: Pretendard;
+    font-weight: 700;
+
+    position: absolute;
+    margin-top: -650px;
+
+}
+
+
+.myArticle {
+    width: 312px;
+    height: 207px;
+    background: #FFF3F3;
+    border-radius: 15px;
+    border: 1.50px #FFE9E9 solid;
+
+    margin-top: -370px;
+    cursor: pointer;
+}
+
+.myArticleTitle {
+    color: #292929;
+    font-size: 26px;
+    font-family: Pretendard;
+    font-weight: 600;
+
+    margin-top: 30px;
+    margin-left: 28px;
+}
+
+.myArticleContent {
+    color: #737373;
+    font-size: 23px;
+    font-family: Pretendard;
+    font-weight: 400;
+
+    margin-top: 14px;
+    margin-left: 28px;
+}
+
+.moreMyArticle {
+    color: #737373;
+    font-size: 20px;
+    font-family: Pretendard;
+    font-weight: 700;
+    width: 52px;
+    height: 24px;
+
+    margin-top: 26px;
+    margin-left: 28px;
+    position: absolute;
+}
+
+.myArticleArrow {
+    margin-left: 87px;
+    margin-top: 31px;
+}
+
+.newArticle {
+    color: #292929;
+    font-size: 26px;
+    font-family: Pretendard;
+    font-weight: 700;
+
+    position: absolute;
+    margin-top: -20px;
+}
+
+.moreNewArticle {
+    color: #737373;
+    font-size: 20px;
+    font-family: Pretendard;
+    font-weight: 700;
+    width: 52px;
+    height: 24px;
+
+    margin-top: -20px;
+    margin-left: 620px;
+    position: absolute;
+    cursor: pointer;
+}
+
+.newArticleArrow {
+    margin-top: -20px;
+    margin-left: 680px;
+    position: absolute;
+    cursor: pointer;
+}
+
+
+.newArticleBox {
+    width: 690px;
+    height: 456px;
+    border-radius: 15px;
+    border: 1.50px #F2F2F2 solid;
+
+    position: absolute;
+    margin-top: 105px;
+}
+
+.nickname {
+    font-size: 25px;
+    font-family: Pretendard;
+    font-weight: 500;
+
+    margin-left: 42px;
+    margin-top: 38px;
+}
+
+.title {
+    color: #737373;
+    font-size: 25px;
+    font-family: Pretendard;
+    font-weight: 500;
+
+    margin-left: 152px;
+    margin-top: -30px;
+}
+
+.new {
+    margin-left: 630px;
+    margin-top: -27px;
+    position: absolute;
+}

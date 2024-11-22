@@ -19,10 +19,10 @@ const Signup = () => {
             <input className={'passInput'} type="password" placeholder={'비밀번호를 입력해주세요.'}/>
 
             <div className={'school'}>고등학교</div>
-            <input className={'schInput'} type="password" placeholder={'비밀번호를 입력해주세요.'}/>
+            <input className={'schInput'}  placeholder={'비밀번호를 입력해주세요.'}/>
 
             <div className={'nickname'}>닉네임</div>
-            <input className={'nameInput'} type="password" placeholder={'비밀번호를 입력해주세요.'}/>
+            <input className={'nameInput'}  placeholder={'비밀번호를 입력해주세요.'}/>
 
             <button className={'loginButton'}>다음</button>
         </div>

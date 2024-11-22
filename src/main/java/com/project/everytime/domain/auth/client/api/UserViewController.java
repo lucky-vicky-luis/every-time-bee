@@ -19,4 +19,8 @@ public class UserViewController {
     public String signup() {
         return "pages/signup/signup";
     }
+    @GetMapping("/main")
+    public String main() {
+        return "pages/main/main";
+    }
 }
