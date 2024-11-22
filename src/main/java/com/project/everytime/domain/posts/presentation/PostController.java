@@ -4,6 +4,7 @@ import com.project.everytime.domain.posts.application.PostService;
 import com.project.everytime.domain.posts.payload.request.PostDeleteRequest;
 import com.project.everytime.domain.posts.payload.request.PostDto;
 import com.project.everytime.domain.posts.payload.request.PostSearchRequest;
+import com.project.everytime.domain.posts.payload.request.PostUpdateRequest;
 import com.project.everytime.global.common.BaseResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.Authentication;
@@ -50,6 +51,12 @@ public class PostController {
     @PatchMapping
     public BaseResponse addLike(@RequestParam Long postId){
         return postService.addLike(postId);
+    }
+
+    @PatchMapping("/update/{id}")
+    public BaseResponse updatePost(@PathVariable(value = "id") Long id,
+                                   @RequestBody PostUpdateRequest postUpdateRequest) {
+        return postService.updatePost(id, postUpdateRequest);
     }
 
 }
