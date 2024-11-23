@@ -23,4 +23,8 @@ public class UserViewController {
     public String main() {
         return "pages/main/main";
     }
+    @GetMapping("/myarticle")
+    public String myaricle() {
+        return "pages/myarticle/myarticle";
+    }
 }
