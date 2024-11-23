@@ -35,4 +35,8 @@ public class UserViewController {
     public String write() {
         return "pages/write/write";
     }
+    @GetMapping("/detail")
+    public String detail() {
+        return "pages/detail/detail";
+    }
 }

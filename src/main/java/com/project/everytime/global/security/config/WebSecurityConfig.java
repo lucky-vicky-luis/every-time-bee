@@ -37,7 +37,8 @@ public class WebSecurityConfig {
                                 "/main",
                                 "/myarticle",
                                 "/allarticle",
-                                "/write"
+                                "/write",
+                                "/detail"
                         )
                         .permitAll()
                         .requestMatchers(PathRequest.toStaticResources().atCommonLocations()) // static resources 경로 파일 허용
