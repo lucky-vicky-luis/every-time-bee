@@ -6,6 +6,7 @@ const Main = () => {
         <div className={'root'}>
             <div className={'container'}>
                 <img className={'logo'} src={'images/logo.png'}/>
+                <button className={'logout'}>로그아웃</button>
                 <img className={'profile'} src={'images/profile.svg'}/>
                 <img className={'search'} src={'images/search.svg'}/>
 

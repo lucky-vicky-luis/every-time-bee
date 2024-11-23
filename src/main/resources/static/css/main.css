@@ -37,6 +37,33 @@ body {
     cursor: pointer;
 }
 
+.logout {
+    width: 116px;
+    height: 41px;
+    background-color: #FF6262;
+    border-radius: 10px;
+    border: none;
+
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    font-family: Pretendard;
+    font-weight: 600;
+
+    position: absolute;
+    margin-top: -855px;
+    margin-left: 420px;
+
+    cursor: pointer;
+
+    &:hover {
+        background: color-mix(in srgb, #F55252 90%, black 6%);
+    }
+
+    &:active {
+        scale: 0.98;
+    }
+}
 
 .profile {
     width: 52px;
