@@ -31,4 +31,8 @@ public class UserViewController {
     public String allarticle() {
         return "pages/allarticle/allarticle";
     }
+    @GetMapping("/write")
+    public String write() {
+        return "pages/write/write";
+    }
 }
