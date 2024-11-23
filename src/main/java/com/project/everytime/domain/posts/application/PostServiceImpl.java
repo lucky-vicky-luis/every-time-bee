@@ -114,8 +114,22 @@ public class PostServiceImpl implements PostService {
     }
 
     private void updateDevice(Post post, PostUpdateRequest request) {
-        if (request.title() != null) post.setTitle(request.title());
-        if (request.content() != null) post.setContent(request.content());
+        if (request == null) {
+            throw new PostException((PostError.REQUEST_IS_NULL_EXCEPTION));
+        }
+
+        if (request.title() == null && request.content() == null) {
+            throw new PostException((PostError.REQUEST_IS_NULL_EXCEPTION));
+        }
+
+        if (request.title() != null) {
+            post.setTitle(request.title());
+        }
+        if (request.content() != null) {
+            post.setContent(request.content());
+        }
+
+        postRepository.save(post);
     }
 
 }
