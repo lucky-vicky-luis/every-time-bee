@@ -1,0 +1,183 @@
+#title {
+    color: red;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.root {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    height: 960px;
+    width: 720px;
+    padding: 64px;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.logo {
+    height: 107px;
+    width: 107px;
+
+    position: absolute;
+    margin-top: -860px;
+    margin-left: -20px;
+
+    cursor: pointer;
+}
+
+.logout {
+    width: 116px;
+    height: 41px;
+    background-color: #FF6262;
+    border-radius: 10px;
+    border: none;
+
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    font-family: Pretendard;
+    font-weight: 600;
+
+    position: absolute;
+    margin-top: -855px;
+    margin-left: 420px;
+
+    cursor: pointer;
+
+    &:hover {
+        background: color-mix(in srgb, #F55252 90%, black 6%);
+    }
+
+    &:active {
+        scale: 0.98;
+    }
+}
+
+.profile {
+    width: 52px;
+    height: 53.46px;
+
+    position: absolute;
+    margin-top: -860px;
+    margin-left: 580px;
+
+    cursor: pointer;
+}
+
+.search {
+    width: 39px;
+    height: 39px;
+
+    position: absolute;
+    margin-top: -860px;
+    margin-left: 670px;
+
+    cursor: pointer;
+
+}
+
+.articleManage {
+    color: #292929;
+    font-size: 30px;
+    font-family: Pretendard;
+    font-weight: 700;
+    margin-top: -700px;
+}
+
+.school {
+    color: #292929;
+    font-size: 25px;
+    font-family: Pretendard;
+    font-weight: 700;
+
+    position: absolute;
+    margin-top: -580px;
+    float: left;
+
+}
+.downarrow {
+    position: absolute;
+    margin-left: 273px;
+    margin-top: -580px;
+
+}
+
+
+.ArticleContainer {
+    color: #737373;
+    font-size: 23px;
+    font-family: Pretendard;
+    font-weight: 400;
+
+    margin-top: -39px;
+}
+
+.newArticleBox {
+    width: 700px;
+    height: 561px;
+    border-radius: 15px;
+    border: 1.50px #F2F2F2 solid;
+
+    position: absolute;
+    margin-top: 105px;
+}
+
+.nickname {
+    color: black;
+    font-size: 25px;
+    font-family: Pretendard;
+    font-weight: 500;
+
+    margin-left: 42px;
+    margin-top: 38px;
+}
+
+.title {
+    color: #737373;
+    font-size: 25px;
+    font-family: Pretendard;
+    font-weight: 500;
+
+    margin-left: 152px;
+    margin-top: -30px;
+    float: left;
+}
+
+.delete {
+    width: 68px;
+    height: 36px;
+    background: #EE3C35;
+    border-radius: 5px;
+    border: none;
+
+    text-align: center;
+    color: white;
+    font-size: 21px;
+    font-family: Pretendard;
+    font-weight: 600;
+
+    cursor: pointer;
+    margin-top: -30px;
+    margin-left: 590px;
+    position: absolute;
+
+    &:hover {
+        background: color-mix(in srgb, #EE3C35 90%, black 6%);
+    }
+
+    &:active {
+        scale: 0.98;
+    }
+}

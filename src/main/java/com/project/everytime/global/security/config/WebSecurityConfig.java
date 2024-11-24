@@ -33,7 +33,13 @@ public class WebSecurityConfig {
                                 "/login",
                                 "/signup",
                                 "/user",
-                                "/onboarding"
+                                "/onboarding",
+                                "/main",
+                                "/myarticle",
+                                "/allarticle",
+                                "/write",
+                                "/detail",
+                                "/admin"
                         )
                         .permitAll()
                         .requestMatchers(PathRequest.toStaticResources().atCommonLocations()) // static resources 경로 파일 허용
