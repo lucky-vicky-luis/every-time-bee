@@ -39,4 +39,8 @@ public class UserViewController {
     public String detail() {
         return "pages/detail/detail";
     }
+    @GetMapping("/admin")
+    public String admin() {
+        return "pages/admin/admin";
+    }
 }
