@@ -38,10 +38,9 @@ public class WebSecurityConfig {
                                 "/myarticle",
                                 "/allarticle",
                                 "/write",
-                                "/detail",
-                                "/admin"
-                        )
-                        .permitAll()
+                                "/detail"
+                        ).permitAll()
+                        .requestMatchers("/admin").hasRole("ROLE_ADMIN")
                         .requestMatchers(PathRequest.toStaticResources().atCommonLocations()) // static resources 경로 파일 허용
                         .permitAll()
                         .anyRequest().authenticated())
