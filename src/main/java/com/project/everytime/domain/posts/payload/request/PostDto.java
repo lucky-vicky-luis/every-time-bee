@@ -8,7 +8,7 @@ public record PostDto(
         String content,
         LocalDateTime regDate,
         Long likeCount,
-        boolean public_status,
+        boolean publicStatus,
         Long writerId
 ) {
 }
