@@ -11,6 +11,7 @@ public record PostDto(
         Long likeCount,
         @NotBlank
         boolean publicStatus,
+        @NotBlank
         Long writerId
 ) {
 }
