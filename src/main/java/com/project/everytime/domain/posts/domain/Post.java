@@ -9,8 +9,10 @@ import java.time.LocalDateTime;
 
 @Entity
 @Getter
+@Setter
 @ToString
 @SuperBuilder
+@Table(name = "tb_post")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Post {
 

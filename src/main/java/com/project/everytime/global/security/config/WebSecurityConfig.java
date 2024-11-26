@@ -40,7 +40,7 @@ public class WebSecurityConfig {
                                 "/write",
                                 "/detail"
                         ).permitAll()
-                        .requestMatchers("/admin").hasRole("ROLE_ADMIN")
+                        .requestMatchers("/admin").hasRole("ADMIN")
                         .requestMatchers(PathRequest.toStaticResources().atCommonLocations()) // static resources 경로 파일 허용
                         .permitAll()
                         .anyRequest().authenticated())
