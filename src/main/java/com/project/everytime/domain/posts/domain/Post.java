@@ -2,18 +2,18 @@ package com.project.everytime.domain.posts.domain;
 
 import jakarta.persistence.*;
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.time.LocalDateTime;
 
 @Entity
-@Setter
 @Getter
+@Setter
 @ToString
+@SuperBuilder
+@Table(name = "tb_post")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-@AllArgsConstructor
-@Builder
-@EntityListeners(AuditingEntityListener.class)
 public class Post {
 
     @Id

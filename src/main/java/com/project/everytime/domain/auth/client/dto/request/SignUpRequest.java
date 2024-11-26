@@ -6,5 +6,4 @@ public record SignUpRequest(
         String email,
         String nickname,
         String password
-//        School school
 ){}

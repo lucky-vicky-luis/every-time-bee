@@ -9,6 +9,7 @@ import com.project.everytime.domain.posts.mapper.PostMapper;
 import com.project.everytime.domain.posts.payload.request.PostDeleteRequest;
 import com.project.everytime.domain.posts.payload.request.PostDto;
 import com.project.everytime.domain.posts.payload.request.PostSearchRequest;
+import com.project.everytime.domain.posts.payload.request.PostUpdateRequest;
 import com.project.everytime.domain.posts.payload.response.PostResponseDto;
 import com.project.everytime.domain.user.domain.entity.UserEntity;
 import com.project.everytime.domain.user.domain.repository.UserRepository;
@@ -82,6 +83,18 @@ public class PostServiceImpl implements PostService {
         return new BaseResponse(HttpStatus.OK, "게시글 삭제 성공");
     }
 
+    @Override
+    @Transactional
+    public BaseResponse updatePost(Long postId, PostUpdateRequest postUpdateRequest) {
+
+        Post post = postRepository.findById(postId).orElseThrow(PostException::notFoundPost);
+        updateDevice(post, postUpdateRequest);
+        postRepository.save(post);
+
+        return new BaseResponse(HttpStatus.OK, "게시글 수정 성공");
+    }
+
+
     @Transactional(readOnly = true)
     public UserEntity findUserByUserId(Long id) {
         return userRepository.findById(id)
@@ -98,6 +111,25 @@ public class PostServiceImpl implements PostService {
             throw new PostException(PostError.POST_NOT_FOUND_EXCEPTION);
         }
         postRepository.deleteById(id);
+    }
+
+    private void updateDevice(Post post, PostUpdateRequest request) {
+        if (request == null) {
+            throw new PostException((PostError.REQUEST_IS_NULL_EXCEPTION));
+        }
+
+        if (request.title() == null && request.content() == null) {
+            throw new PostException((PostError.REQUEST_IS_NULL_EXCEPTION));
+        }
+
+        if (request.title() != null) {
+            post.setTitle(request.title());
+        }
+        if (request.content() != null) {
+            post.setContent(request.content());
+        }
+
+        postRepository.save(post);
     }
 
 }

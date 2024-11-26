@@ -33,9 +33,14 @@ public class WebSecurityConfig {
                                 "/login",
                                 "/signup",
                                 "/user",
-                                "/onboarding"
-                        )
-                        .permitAll()
+                                "/onboarding",
+                                "/main",
+                                "/myarticle",
+                                "/allarticle",
+                                "/write",
+                                "/detail"
+                        ).permitAll()
+                        .requestMatchers("/admin").hasRole("ADMIN")
                         .requestMatchers(PathRequest.toStaticResources().atCommonLocations()) // static resources 경로 파일 허용
                         .permitAll()
                         .anyRequest().authenticated())

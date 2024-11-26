@@ -1,0 +1,205 @@
+#title {
+    color: red;
+}
+
+.root {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    height: 120%;
+    width: 720px;
+    align-items: flex-start;
+}
+
+.backArrow {
+    margin-left: 65px;
+    margin-top: 50px;
+
+    cursor: pointer;
+}
+
+.pageTitle {
+    color: #292929;
+    font-size: 24px;
+    font-family: Pretendard;
+    font-weight: 600;
+
+    margin-left: 308px;
+    margin-top: -40px;
+
+}
+
+.pageSemiTitle {
+    color: #737373;
+    font-size: 20px;
+    font-family: Pretendard;
+    font-weight: 500;
+
+    margin-left: 343px;
+    margin-top: 0px;
+
+}
+
+.articleContainer {
+    width: 554.46px;
+    height: 232px;
+    border-bottom: solid 1px #EDEDED;
+
+    margin-left: 91px;
+    margin-top: 38px;
+}
+
+.profile {
+    float: left;
+}
+
+.title {
+    font-size: 30px;
+    font-family: Pretendard;
+    font-weight: 700;
+
+    margin-left: 84px;
+    margin-top: -50px;
+    position: absolute;
+}
+
+.content {
+    color: #737373;
+    font-size: 22px;
+    font-family: Pretendard;
+    font-weight: 500;
+
+    margin-left: 84px;
+    margin-top: -10px;
+}
+
+
+.unlike {
+    width: 26.61px; height: 26.61px;
+    margin-left: 355px;
+    margin-top: 75px;
+    float: left;
+
+    cursor: pointer;
+}
+
+.likeAccount {
+    color: #EE3C35;
+    font-size: 20px;
+    font-family: Pretendard;
+    font-weight: 500;
+    display: inline-block;
+    float: left;
+
+    margin-left: 9px;
+    margin-top: 74px;
+}
+
+.divideLineOne {
+    width: 1px;
+    height: 24.39px;
+    background-color: #E7E4E4;
+
+    margin-left: 12px;
+    margin-top: 74px;
+    float: left;
+}
+
+.postTime {
+    color: #A6A6A6;
+    font-size: 20px;
+    font-family: Pretendard;
+    font-weight: 400;
+    float: left;
+
+    margin-left: 13px;
+    margin-top: 74px;
+}
+
+.divideLineTwo {
+    width: 1px;
+    height: 24.39px;
+    background-color: #E7E4E4;
+
+    margin-left: 12px;
+    margin-top: 44px;
+    float: left;
+
+    margin-left: 13px;
+    margin-top: 74px;
+    float: left;
+}
+
+.authNickname {
+    color: #A6A6A6;
+    font-size: 20px;
+    font-family: Pretendard;
+    font-weight: 400;
+
+    margin-left: 13px;
+    margin-top: 74px;
+    float: left;
+}
+
+.commentTitle {
+    font-size: 25px;
+    font-family: Pretendard;
+    font-weight: 700;
+
+    margin-left: 91px;
+    margin-top: 383px;
+    position: absolute;
+}
+
+.commentCount {
+    font-size: 25px;
+    font-family: Pretendard;
+    font-weight: 700;
+
+    margin-left: 140px;
+    margin-top: 383px;
+    position: absolute;
+}
+
+.commentBox {
+    width: 554.46px;
+
+    margin-left: 91px;
+    margin-top: 94px;
+}
+
+.commentProfile {
+    float: left;
+}
+
+.commentNick {
+    font-size: 20px;
+    font-family: Pretendard;
+    font-weight: 700;
+    
+    margin-left: 72px;
+}
+
+.comment {
+    color: #737373;
+    font-size: 20px;
+    font-family: Pretendard;
+    font-weight: 400;
+
+    margin-top: 8px;
+    margin-left: 72px;
+}

@@ -1,13 +1,15 @@
 package com.project.everytime.domain.posts.payload.request;
 
-import java.time.LocalDateTime;
+import jakarta.validation.constraints.NotBlank;
 
 public record PostDto(
-        Long id,
+        @NotBlank
         String title,
+        @NotBlank
         String content,
-        LocalDateTime regDate,
+        @NotBlank
         Long likeCount,
+        @NotBlank
         boolean publicStatus,
         Long writerId
 ) {

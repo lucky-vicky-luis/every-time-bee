@@ -19,4 +19,28 @@ public class UserViewController {
     public String signup() {
         return "pages/signup/signup";
     }
+    @GetMapping("/main")
+    public String main() {
+        return "pages/main/main";
+    }
+    @GetMapping("/myarticle")
+    public String myarticle() {
+        return "pages/myarticle/myarticle";
+    }
+    @GetMapping("/allarticle")
+    public String allarticle() {
+        return "pages/allarticle/allarticle";
+    }
+    @GetMapping("/write")
+    public String write() {
+        return "pages/write/write";
+    }
+    @GetMapping("/detail")
+    public String detail() {
+        return "pages/detail/detail";
+    }
+    @GetMapping("/admin")
+    public String admin() {
+        return "pages/admin/admin";
+    }
 }
