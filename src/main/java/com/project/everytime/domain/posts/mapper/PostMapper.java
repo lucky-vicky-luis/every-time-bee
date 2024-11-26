@@ -19,7 +19,7 @@ public class PostMapper {
                 .content(entity.getContent())
                 .regDate(entity.getRegDate())
                 .likeCount(entity.getLikeCount())
-                .public_status(entity.isPublic_status())
+                .publicStatus(entity.isPublicStatus())
                 .writerId(entity.getWriterId())
                 .build();
     }
@@ -30,7 +30,7 @@ public class PostMapper {
                 .content(dto.content())
                 .regDate(LocalDateTime.now())
                 .likeCount(dto.likeCount())
-                .public_status(dto.public_status())
+                .publicStatus(dto.publicStatus())
                 .writerId(dto.writerId())
                 .build();
     }
