@@ -2,14 +2,22 @@ const {useState, useEffect} = React;
 
 
 const Myarticle = () => {
+
+    const backToMain = () => {
+        window.location.href = '/main';
+    }
+
+    const goToWrite = () => {
+        window.location.href = '/write';
+    }
     return (
         <div className={'root'}>
             <div className={'container'}>
-                <img className={'backArrow'} src={'images/backarrow.svg'}/>
+                <img className={'backArrow'} onClick={backToMain} src={'images/backarrow.svg'}/>
                 <div className={'pageTitle'}>전체게시판</div>
                 <div className={'pageSemiTitle'}>공통</div>
 
-                <button className={'writeButton'}>
+                <button className={'writeButton'} onClick={goToWrite} >
                     <img className={'write'} src={'images/write.svg'}/>
                     글쓰기
                 </button>

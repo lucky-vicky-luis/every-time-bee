@@ -2,10 +2,14 @@ const {useState, useEffect} = React;
 
 
 const Myarticle = () => {
+
+    const backToMain = () => {
+        window.location.href = '/main'; // 로그인 페이지로 리디렉션
+    }
     return (
         <div className={'root'}>
             <div className={'container'}>
-                <img className={'backArrow'} src={'images/backarrow.svg'}/>
+                <img className={'backArrow'} onClick={backToMain} src={'images/backarrow.svg'}/>
                 <div className={'pageTitle'}>내작글</div>
                 <div className={'pageSemiTitle'}>내가 작성한 글</div>
 
