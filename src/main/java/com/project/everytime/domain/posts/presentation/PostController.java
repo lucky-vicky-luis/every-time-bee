@@ -6,6 +6,8 @@ import com.project.everytime.domain.posts.payload.request.PostDto;
 import com.project.everytime.domain.posts.payload.request.PostSearchRequest;
 import com.project.everytime.domain.posts.payload.request.PostUpdateRequest;
 import com.project.everytime.global.common.BaseResponse;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotBlank;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
@@ -23,28 +25,28 @@ public class PostController {
     }
 
     @PostMapping("/create")
-    public BaseResponse createPost(@RequestBody PostDto postDto){
+    public BaseResponse createPost(@RequestBody @Valid PostDto postDto){
         return postService.createPost(postDto);
     }
 
     @GetMapping("/detail/{id}")
-    public BaseResponse readPost(@PathVariable("id") Long id){
+    public BaseResponse readPost(@PathVariable("id") @NotBlank Long id){
         return postService.readPost(id);
     }
 
     @GetMapping("/search")
-    public BaseResponse searchPost(@RequestBody PostSearchRequest request){
+    public BaseResponse searchPost(@RequestBody @Valid PostSearchRequest request){
         return postService.postSearch(request);
     }
 
     @DeleteMapping("/delete/{id}")
-    public BaseResponse deletePost(@RequestBody PostDeleteRequest postDeleteRequest, Authentication authentication){
+    public BaseResponse deletePost(@RequestBody @Valid PostDeleteRequest postDeleteRequest, Authentication authentication){
         return postService.deletePost(postDeleteRequest, authentication);
 
     }
 
     @GetMapping("/my/{userId}")
-    public BaseResponse myPosts(@PathVariable("userId") Long userId, Authentication authentication) {
+    public BaseResponse myPosts(@PathVariable("userId") @NotBlank Long userId, Authentication authentication) {
         return postService.myPosts(userId, authentication);
     }
 
@@ -54,8 +56,8 @@ public class PostController {
     }
 
     @PatchMapping("/update/{id}")
-    public BaseResponse updatePost(@PathVariable(value = "id") Long id,
-                                   @RequestBody PostUpdateRequest postUpdateRequest) {
+    public BaseResponse updatePost(@PathVariable(value = "id") @NotBlank Long id,
+                                   @RequestBody @Valid PostUpdateRequest postUpdateRequest) {
         return postService.updatePost(id, postUpdateRequest);
     }
 
