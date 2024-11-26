@@ -33,7 +33,7 @@ public class Post {
     private Long likeCount;
 
     @Column(nullable = false)
-    private boolean public_status;
+    private boolean publicStatus;
 
     @Column(nullable = false)
     private Long writerId;

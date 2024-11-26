@@ -35,7 +35,7 @@ public class PostQueryRepository {
                 post.content,
                 post.regDate,
                 post.likeCount,
-                post.public_status
+                post.publicStatus
         );
     }
 
